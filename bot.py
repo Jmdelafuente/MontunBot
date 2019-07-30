@@ -198,9 +198,9 @@ def manage_new_faq(message):
 
 
 #Match con todos los comandos que no hayan instanciado aun
-# @bot.message_handler(regexp='/[\w]*')
-# def on_info(message):
-# 	 bot.reply_to(message, "Lo siento, aun no me hicieron tan inteligente para poder contestar eso :) .")
+@bot.message_handler(regexp='/[\w]*')
+def on_info(message):
+	 bot.reply_to(message, "Lo siento, aun no me hicieron tan inteligente para poder contestar eso :) .")
 
 #Devolvemos el agradecimiento de forma respetuosa
 @bot.message_handler(regexp='gracias montun[bot]*')
@@ -219,12 +219,12 @@ def clap_message(message):
 
 
 # Default command handler. A lambda expression which always returns True is used for this purpose.
-@bot.callback_query_handler(func=lambda message: True, content_types=['audio', 'video', 'document', 'text', 'location', 'contact', 'sticker'])
-@bot.message_handler(func=lambda message: True, content_types=['audio', 'video', 'document', 'text', 'location', 'contact', 'sticker'])
-def default_command(message):
-	print message
-	print "***************************************************************************"
-	bot.reply_to(message, "Lo siento, aun no me hicieron tan inteligente para poder contestar eso :) .")
+# @bot.callback_query_handler(func=lambda message: True, content_types=['audio', 'video', 'document', 'text', 'location', 'contact', 'sticker'])
+# @bot.message_handler(func=lambda message: True, content_types=['audio', 'video', 'document', 'text', 'location', 'contact', 'sticker'])
+# def default_command(message):
+# 	print message
+# 	print "***************************************************************************"
+# 	bot.reply_to(message, "Lo siento, aun no me hicieron tan inteligente para poder contestar eso :) .")
 
 
 def main_loop():
